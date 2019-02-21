@@ -13,7 +13,7 @@
     <context:component-scan base-package="ejemplo03"/>
 
     <bean class="com.fpmislata.persistencia.hibernate.HibernateUtil" factory-method="getSessionFactory"  />
-    <bean class="ejemplo03.persistencia.dao.impl.ProfesorDAOImplHibernate" />
+    <bean class="ejemplo03.persistencia.dao.impl.LocalDAOImplHibernate" />
 
 </beans>
 

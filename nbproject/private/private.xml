@@ -2,6 +2,25 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/persistencia/dao/impl/LocalDAOImplHibernate.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/persistencia/dao/LocalDAO.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/persistencia/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/persistencia/dao/impl/LicenciaDAOImplHibernate.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/com/fpmislata/persistencia/hibernate/HibernateUtil.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/dominio/Local.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/WEB-INF/jsp/profesor.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/redirect.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/com/fpmislata/persistencia/dao/impl/GenericDAOImplHibernate.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/WEB-INF/jsp/locales.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/persistencia/dao/LicenciaDAO.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/com/fpmislata/persistencia/hibernate/HibernateContextListenerAndFilter.java</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/sportak/Desktop/UD05-3PROFESORCRUD/src/java/ejemplo03/persistencia/dao/ProfesorDAO.java</file>
+        </group>
     </open-files>
 </project-private>
