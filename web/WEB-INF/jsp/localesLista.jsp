@@ -38,10 +38,12 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>1&ordm; Apellido</th>
-                                    <th>2&ordm; Apellido</th>
-                                    <th>&nbsp;</th>
+                                    <th>Ref. Muni.</th>
+                                    <th>Emplazamiento</th>
+                                    <th>Zona Saturada</th>
+                                    <th>Codigo Portal</th>
+                                    <th>Comentarios</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,7 +52,11 @@
                                 %>
                                 <tr>
                                     <td><a href="<%=request.getContextPath()%>/locales/readForUpdate.html?id=<%=local.getId()%>" title="Editar" ><%=local.getId()%></a></td>
-                          
+                                    <td><%=HtmlUtils.htmlEscape(local.getRefMuni())%></td>
+                                    <td><%=HtmlUtils.htmlEscape(local.getEmplazamiento())%></td>
+                                    <td><%=HtmlUtils.htmlEscape(local.getZonaSaturada())%></td>
+                                    <td><%=HtmlUtils.htmlEscape(local.getCodigoPortal())%></td>
+                                    <td><%=HtmlUtils.htmlEscape(local.getComentarios())%></td>
                                     <td>
                                         <a href="<%=request.getContextPath()%>/locales/readForDelete.html?id=<%=local.getId()%>" title="Borrar" ><i class="icon-trash"></i></a>
                                     </td>

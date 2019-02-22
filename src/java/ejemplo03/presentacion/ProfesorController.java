@@ -88,7 +88,7 @@ public class ProfesorController {
                 throw new BussinessException(new BussinessMessage(null, "No existe el profesor con id=" + id));
             }
             model.put("formOperation", FormOperation.Update);
-            model.put("locales", local);
+            model.put("local", local);
             viewName = "locales";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
@@ -116,7 +116,7 @@ public class ProfesorController {
                 throw new BussinessException(new BussinessMessage(null, "No existe el profesor con id=" + id));
             }
             model.put("formOperation", FormOperation.Delete);
-            model.put("locales", local);
+            model.put("local", local);
             viewName = "locales";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
@@ -185,11 +185,11 @@ public class ProfesorController {
             if (local == null) {
                 throw new BussinessException(new BussinessMessage(null, "Ya no existe el profesor."));
             }
-            /*
-            profesor.setNombre(request.getParameter("nombre"));
-            profesor.setApe1(request.getParameter("ape1"));
-            profesor.setApe2(request.getParameter("ape2"));
-            */
+            
+            local.setEmplazamiento(request.getParameter("emplazamiento"));
+            local.setComentarios(request.getParameter("comentarios"));
+            local.setCodigoPortal(request.getParameter("codportal"));
+            
             localDAO.saveOrUpdate(local);
 
             viewName = "redirect:/index.html";

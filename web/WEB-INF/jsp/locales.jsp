@@ -40,12 +40,22 @@
         </div>
         <div class="row">
             <div class="offset1 span10 well">
-                <h3>Profesor</h3>
+                <h3>Local</h3>
                 <form action="<%=urlAction%>" method="post" >
-                    <fieldset>
+                     <fieldset>
                         <label class="control-label" for="id">Id:</label>
                         <input class="input-large disabled " id="id" name="id" type="text" value="${local.id}" readonly="readonly">
+                        
+                        <label class="control-label" for="emplazamiento">Emplazamiento</label>
+                        <input class="input-large disabled " style="width: 100%" id="emplazamiento" name="emplazamiento" type="text" value="${local.emplazamiento}">
+                        
+                         <label class="control-label" for="codportal">Codigo Portal</label>
+                        <input class="input-large disabled" style="width: 100%" id="codportal" name="codportal" type="text" value="${local.codigoPortal}">
 
+                         <label class="control-label" for="comentarios">Comentarios</label>
+                        <input class="input-large disabled " style="width: 100%" id="comentarios" name="comentarios" type="text" value="${local.comentarios}">
+
+                        
                     </fieldset>
                     <% if (request.getAttribute("bussinessMessages") != null) {%>
                     <div class="alert alert-error alert-block">
