@@ -10,4 +10,6 @@ public interface GenericDAO<T,ID extends Serializable> {
     T get(ID id) throws BussinessException;
     void delete(ID id) throws BussinessException;
     List<T> findAll() throws BussinessException;
+    
+    
 }

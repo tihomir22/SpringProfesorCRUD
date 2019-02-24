@@ -9,4 +9,6 @@ import ejemplo03.dominio.Licencia;
  */
 public interface LicenciaDAO extends GenericDAO<Licencia,Integer> {
 
+  
+
 }

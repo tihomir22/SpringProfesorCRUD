@@ -33,15 +33,18 @@ public class ProfesorController {
 
     @Autowired
     private LocalDAO localDAO;
-    
+
     @RequestMapping({"/index.html"})
     public ModelAndView listarProfesores(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
 
         try {
-            List<Local> local=localDAO.findAll();
-            model.put("locales",local);
+            List<Local> local = localDAO.findAll();
+            for (int i = 0; i < local.size(); i++) {
+                System.out.println(local.get(i).getLicencias());
+            }
+            model.put("locales", local);
             viewName = "localesLista";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
@@ -51,6 +54,9 @@ public class ProfesorController {
 
         return new ModelAndView(viewName, model);
     }
+    
+  
+
     @RequestMapping({"/locales/newForInsert"})
     public ModelAndView newForInsert(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
@@ -60,7 +66,7 @@ public class ProfesorController {
             Local local = localDAO.create();
             model.put("formOperation", FormOperation.Insert);
             model.put("locales", local);
-            viewName = "localesLista";
+            viewName = "locales";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -80,7 +86,7 @@ public class ProfesorController {
             try {
                 id = Integer.parseInt(request.getParameter("id"));
             } catch (NumberFormatException nfe) {
-                throw new BussinessException(new BussinessMessage(null,"Se debe escribir un Id válido"));
+                throw new BussinessException(new BussinessMessage(null, "Se debe escribir un Id válido"));
             }
 
             Local local = localDAO.get(id);
@@ -108,7 +114,7 @@ public class ProfesorController {
             try {
                 id = Integer.parseInt(request.getParameter("id"));
             } catch (NumberFormatException nfe) {
-                throw new BussinessException(new BussinessMessage(null,"Se debe escribir un Id válido"));
+                throw new BussinessException(new BussinessMessage(null, "Se debe escribir un Id válido"));
             }
 
             Local local = localDAO.get(id);
@@ -142,24 +148,23 @@ public class ProfesorController {
         try {
             local = localDAO.create();
 
-            /*profesor.setNombre(request.getParameter("nombre"));
-            profesor.setApe1(request.getParameter("ape1"));
-            profesor.setApe2(request.getParameter("ape2"));*/
+            local.setEmplazamiento(request.getParameter("emplazamiento"));
+            local.setCodigoPortal(request.getParameter("codportal"));
+            local.setComentarios(request.getParameter("comentarios"));
+            local.setId(Integer.parseInt(request.getParameter("id")));
 
             localDAO.saveOrUpdate(local);
 
             viewName = "redirect:/index.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
-            if (local!=null) {
+            if (local != null) {
                 local.setId(0);
             }
             model.put("locales", local);
             model.put("formOperation", FormOperation.Insert);
             viewName = "locales";
         }
-
-
 
         return new ModelAndView(viewName, model);
     }
@@ -179,17 +184,17 @@ public class ProfesorController {
             try {
                 id = Integer.parseInt(request.getParameter("id"));
             } catch (NumberFormatException nfe) {
-                throw new BussinessException(new BussinessMessage(null,"Se debe escribir un Id válido"));
+                throw new BussinessException(new BussinessMessage(null, "Se debe escribir un Id válido"));
             }
             local = localDAO.get(id);
             if (local == null) {
                 throw new BussinessException(new BussinessMessage(null, "Ya no existe el profesor."));
             }
-            
+
             local.setEmplazamiento(request.getParameter("emplazamiento"));
             local.setComentarios(request.getParameter("comentarios"));
             local.setCodigoPortal(request.getParameter("codportal"));
-            
+
             localDAO.saveOrUpdate(local);
 
             viewName = "redirect:/index.html";
@@ -208,13 +213,13 @@ public class ProfesorController {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
 
-        Local local=null;
+        Local local = null;
         try {
             int id;
             try {
                 id = Integer.parseInt(request.getParameter("id"));
             } catch (NumberFormatException nfe) {
-                throw new BussinessException(new BussinessMessage(null,"Se debe escribir un Id válido"));
+                throw new BussinessException(new BussinessMessage(null, "Se debe escribir un Id válido"));
             }
             local = localDAO.get(id);
             if (local == null) {

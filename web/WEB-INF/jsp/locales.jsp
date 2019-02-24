@@ -28,60 +28,105 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Profesor</title>
-        <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
-        <link href="<%=request.getContextPath()%>/css/bootstrap-responsive.css" rel="stylesheet">
-        <script type="text/javascript"  src="<%=request.getContextPath()%>/js/jquery-1.9.0.js"></script>
-        <script type="text/javascript"  src="<%=request.getContextPath()%>/js/bootstrap.js" ></script>
+        <title>Local</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </head>
     <body style="background:#FDFDFD">
-        <div class="row">
-            <div class="span12">&nbsp;</div>
-        </div>
-        <div class="row">
-            <div class="offset1 span10 well">
-                <h3>Local</h3>
-                <form action="<%=urlAction%>" method="post" >
-                     <fieldset>
-                        <label class="control-label" for="id">Id:</label>
-                        <input class="input-large disabled " id="id" name="id" type="text" value="${local.id}" readonly="readonly">
-                        
-                        <label class="control-label" for="emplazamiento">Emplazamiento</label>
-                        <input class="input-large disabled " style="width: 100%" id="emplazamiento" name="emplazamiento" type="text" value="${local.emplazamiento}">
-                        
-                         <label class="control-label" for="codportal">Codigo Portal</label>
-                        <input class="input-large disabled" style="width: 100%" id="codportal" name="codportal" type="text" value="${local.codigoPortal}">
 
-                         <label class="control-label" for="comentarios">Comentarios</label>
-                        <input class="input-large disabled " style="width: 100%" id="comentarios" name="comentarios" type="text" value="${local.comentarios}">
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-                        
-                    </fieldset>
-                    <% if (request.getAttribute("bussinessMessages") != null) {%>
-                    <div class="alert alert-error alert-block">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <ul>
-                            <%for (BussinessMessage bussinessMessage : (Set<BussinessMessage>) request.getAttribute("bussinessMessages")) {%>
-                            <li>
-                                <%if (bussinessMessage.getFieldName() != null) {
-                                        out.print("<strong>" + HtmlUtils.htmlEscape(bussinessMessage.getFieldName()) + "</strong>");
-                                    }
-                                %>
-                                <%=HtmlUtils.htmlEscape(bussinessMessage.getMessage())%>
-                            </li>
-                            <%} %>
-                        </ul>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Locales</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarsExample01" style="">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/SpringLocales/index.html">Locales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/SpringLocales/licencias.html">Licencias</a>
+                    </li>
+            </div>
+        </nav>
+        <br>
+        <div class="container">
+            <div class="card" style="padding:20px;opacity:0.9"> 
+                <div class="row">
+                    <div class="span12">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="card-title">Locales</h4>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= labelButton%> local</h6>
+                        <form action="<%=urlAction%>" method="post" >
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="control-label" for="id">Id:</label>
+                                    <input class="input-large disabled form-control " id="id" name="id" type="text" value="${local.id}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label" for="emplazamiento">Emplazamiento</label>
+                                    <input class="input-large disabled form-control"  id="emplazamiento" name="emplazamiento" type="text" value="${local.emplazamiento}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label" for="codportal">Codigo Portal</label>
+                                    <input class="input-large disabled form-control"  id="codportal" name="codportal" type="text" value="${local.codigoPortal}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label" for="comentarios">Comentarios</label>
+                                    <input class="input-large disabled form-control"  id="comentarios" name="comentarios" type="text" value="${local.comentarios}">
+                                </div>
+
+
+                            </fieldset>
+
+                            <% if (request.getAttribute("bussinessMessages") != null) {%>
+                            <div class="alert alert-error alert-block">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <ul>
+                                    <%for (BussinessMessage bussinessMessage : (Set<BussinessMessage>) request.getAttribute("bussinessMessages")) {%>
+                                    <li>
+                                        <%if (bussinessMessage.getFieldName() != null) {
+                                                out.print("<strong>" + HtmlUtils.htmlEscape(bussinessMessage.getFieldName()) + "</strong>");
+                                            }
+                                        %>
+                                        <%=HtmlUtils.htmlEscape(bussinessMessage.getMessage())%>
+                                    </li>
+                                    <%} %>
+                                </ul>
+                            </div>
+                            <%}%>
+                            <div class="form-actions">
+                                <button id="aceptarBtn" class="btn btn-primary" type="submit"><%=labelButton%></button>
+                                <a class="btn" href="<%=request.getContextPath()%>/index.html" >Cancelar</a>
+                            </div>
+                        </form>
                     </div>
-                    <%} %>
-                    <div class="form-actions">
-                        <button id="aceptarBtn" class="btn btn-primary" type="submit"><%=labelButton%></button>
-                        <a class="btn" href="<%=request.getContextPath()%>/index.html" >Cancelar</a>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-        <script>
 
-        </script>
     </body>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+    <script>
+        document.body.style.backgroundImage = "url(https://hdqwalls.com/download/galaxy-digital-universe-2048x1152.jpg)";
+        document.body.style.width = "100%";
+    </script>
+
 </html>

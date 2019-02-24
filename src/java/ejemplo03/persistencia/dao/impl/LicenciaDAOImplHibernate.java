@@ -8,4 +8,6 @@ import ejemplo03.persistencia.dao.LicenciaDAO;
 
 public class LicenciaDAOImplHibernate extends GenericDAOImplHibernate<Licencia,Integer> implements  LicenciaDAO {
 
+   
+
 }

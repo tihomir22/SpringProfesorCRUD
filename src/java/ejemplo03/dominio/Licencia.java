@@ -9,7 +9,7 @@ package ejemplo03.dominio;
 public class Licencia  implements java.io.Serializable {
 
 
-     private String expediente;
+     private int expediente;
      private Local local;
      private int idLicencia;
      private String titulo;
@@ -19,7 +19,7 @@ public class Licencia  implements java.io.Serializable {
     public Licencia() {
     }
 
-    public Licencia(String expediente, Local local, int idLicencia, String titulo, String fechaCreacion, String anyo) {
+    public Licencia(int expediente, Local local, int idLicencia, String titulo, String fechaCreacion, String anyo) {
        this.expediente = expediente;
        this.local = local;
        this.idLicencia = idLicencia;
@@ -27,46 +27,46 @@ public class Licencia  implements java.io.Serializable {
        this.fechaCreacion = fechaCreacion;
        this.anyo = anyo;
     }
-   
-    public String getExpediente() {
+
+    public int getExpediente() {
         return this.expediente;
     }
-    
-    public void setExpediente(String expediente) {
+
+    public void setExpediente(int expediente) {
         this.expediente = expediente;
     }
     public Local getLocal() {
         return this.local;
     }
-    
+
     public void setLocal(Local local) {
         this.local = local;
     }
     public int getIdLicencia() {
         return this.idLicencia;
     }
-    
+
     public void setIdLicencia(int idLicencia) {
         this.idLicencia = idLicencia;
     }
     public String getTitulo() {
         return this.titulo;
     }
-    
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
     public String getFechaCreacion() {
         return this.fechaCreacion;
     }
-    
+
     public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     public String getAnyo() {
         return this.anyo;
     }
-    
+
     public void setAnyo(String anyo) {
         this.anyo = anyo;
     }
@@ -75,5 +75,3 @@ public class Licencia  implements java.io.Serializable {
 
 
 }
-
-
