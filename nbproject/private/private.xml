@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/localesLista.jsp</file>
             <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/src/java/ejemplo03/presentacion/ProfesorController.java</file>
+            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/src/java/com/fpmislata/persistencia/dao/impl/GenericDAOImplHibernate.java</file>
             <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/locales.jsp</file>
             <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/src/java/ejemplo03/presentacion/LicenciaController.java</file>
             <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/licenciasLista.jsp</file>
