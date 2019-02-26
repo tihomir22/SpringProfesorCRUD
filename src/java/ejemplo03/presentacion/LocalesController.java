@@ -6,13 +6,13 @@ package ejemplo03.presentacion;
 
 import com.fpmislata.persistencia.dao.BussinessException;
 import com.fpmislata.persistencia.dao.BussinessMessage;
+import ejemplo03.dominio.Licencia;
 import ejemplo03.dominio.Local;
 import ejemplo03.dominio.Profesor;
 import ejemplo03.dominio.Profesor;
 import ejemplo03.persistencia.dao.LocalDAO;
-import ejemplo03.persistencia.dao.ProfesorDAO;
-import ejemplo03.persistencia.dao.ProfesorDAO;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,18 +29,19 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Lorenzo González
  */
 @Controller
-public class ProfesorController {
+public class LocalesController {
 
     @Autowired
     private LocalDAO localDAO;
 
-    @RequestMapping({"/index.html"})
+    @RequestMapping({"/listalocales.html"})
     public ModelAndView listarProfesores(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
 
         try {
             List<Local> local = localDAO.findAll();
+
             for (int i = 0; i < local.size(); i++) {
                 System.out.println(local.get(i).getLicencias());
             }
@@ -54,8 +55,6 @@ public class ProfesorController {
 
         return new ModelAndView(viewName, model);
     }
-    
-  
 
     @RequestMapping({"/locales/newForInsert"})
     public ModelAndView newForInsert(HttpServletRequest request, HttpServletResponse response) {
@@ -93,8 +92,15 @@ public class ProfesorController {
             if (local == null) {
                 throw new BussinessException(new BussinessMessage(null, "No existe el profesor con id=" + id));
             }
+            
+            
+            List<Licencia> licencias = new ArrayList<Licencia>();
+            licencias.addAll(local.getLicencias());
+          
+
             model.put("formOperation", FormOperation.Update);
             model.put("local", local);
+            model.put("licencias", licencias);
             viewName = "locales";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
@@ -121,7 +127,12 @@ public class ProfesorController {
             if (local == null) {
                 throw new BussinessException(new BussinessMessage(null, "No existe el profesor con id=" + id));
             }
+            List<Licencia> licencias = new ArrayList<Licencia>();
+            licencias.addAll(local.getLicencias());
+          
+
             model.put("formOperation", FormOperation.Delete);
+            model.put("licencias", licencias);
             model.put("local", local);
             viewName = "locales";
         } catch (BussinessException ex) {

@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/localesLista.jsp</file>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/src/java/ejemplo03/presentacion/ProfesorController.java</file>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/src/java/com/fpmislata/persistencia/dao/impl/GenericDAOImplHibernate.java</file>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/locales.jsp</file>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/src/java/ejemplo03/presentacion/LicenciaController.java</file>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/licenciasLista.jsp</file>
-            <file>file:/C:/Users/sportak/Documents/NetBeansProjects/SpringProfesorCRUD/web/WEB-INF/jsp/licencia.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/src/java/ejemplo03/presentacion/LicenciaController.java</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/web/WEB-INF/jsp/licencia.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/src/java/ejemplo03/presentacion/LocalesController.java</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/web/WEB-INF/jsp/locales.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/web/WEB-INF/jsp/localesLista.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/src/java/ejemplo03/persistencia/dao/impl/LicenciaDAOImplHibernate.java</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/web/WEB-INF/jsp/licenciasLista.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/src/java/hibernate.reveng.xml</file>
+            <file>file:/C:/Users/sportak/Desktop/SpringProfesorCRUD/src/java/ejemplo03/persistencia/dao/impl/Usuario.hbm.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -31,7 +31,7 @@ public class LicenciaController {
     @Autowired
     private LocalDAO localDAO;
 
-    @RequestMapping({"/licencias.html"})
+    @RequestMapping({"/listalicencias.html"})
     public ModelAndView listarLicencias(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
@@ -60,11 +60,17 @@ public class LicenciaController {
         String viewName;
 
         try {
+
             Licencia licencia = licenciaDAO.create();
             List<Local> locales = localDAO.findAll();
+
             ArrayList<Integer> ids = new ArrayList();
-            for (Local local : locales) {
-                ids.add(local.getId());
+            if (request.getParameter("local") != null) {
+                ids.add(Integer.parseInt(request.getParameter("local")));
+            } else {
+                for (Local local : locales) {
+                    ids.add(local.getId());
+                }
             }
 
             model.put("formOperation", FormOperation.Insert);
@@ -96,7 +102,7 @@ public class LicenciaController {
             licencia = licenciaDAO.create();
 
             licencia.setIdLicencia(Integer.parseInt(request.getParameter("id")));
-            licencia.setExpediente(Integer.parseInt(request.getParameter("expediente")));
+            licencia.setExpediente(Integer.parseInt(request.getParameter("expediente").trim()));
             licencia.setTitulo(request.getParameter("titulo"));
             licencia.setFechaCreacion(request.getParameter("fechaCreacion"));
             licencia.setAnyo(request.getParameter("anyo"));
@@ -145,7 +151,7 @@ public class LicenciaController {
 
         return new ModelAndView(viewName, model);
     }
-    
+
     @RequestMapping({"/licencia/readForUpdate"})
     public ModelAndView readForUpdate(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
@@ -154,12 +160,12 @@ public class LicenciaController {
         try {
             int id;
             try {
-                 id = Integer.parseInt(request.getParameter("expediente"));
+                id = Integer.parseInt(request.getParameter("expediente"));
             } catch (NumberFormatException nfe) {
                 throw new BussinessException(new BussinessMessage(null, "Se debe escribir un Id válido"));
             }
 
-           Licencia licencia = licenciaDAO.get(id);
+            Licencia licencia = licenciaDAO.get(id);
             if (licencia == null) {
                 throw new BussinessException(new BussinessMessage(null, "No existe el profesor con id=" + id));
             }
@@ -174,7 +180,7 @@ public class LicenciaController {
 
         return new ModelAndView(viewName, model);
     }
-    
+
     @RequestMapping({"/licencia/update.html"})
     public ModelAndView update(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
@@ -197,9 +203,8 @@ public class LicenciaController {
                 throw new BussinessException(new BussinessMessage(null, "Ya no existe el profesor."));
             }
 
-           licencia.setAnyo(request.getParameter("anyo"));
-           licencia.setTitulo(request.getParameter("titulo"));
-   
+            licencia.setAnyo(request.getParameter("anyo"));
+            licencia.setTitulo(request.getParameter("titulo"));
 
             licenciaDAO.saveOrUpdate(licencia);
 
@@ -213,8 +218,7 @@ public class LicenciaController {
 
         return new ModelAndView(viewName, model);
     }
-    
-    
+
     @RequestMapping({"/licencia/readForDelete"})
     public ModelAndView readForDelete(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();

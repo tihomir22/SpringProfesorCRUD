@@ -63,13 +63,13 @@
             <div class="navbar-collapse collapse" id="navbarsExample01" style="">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                         <a class="nav-link" href="/SpringLocales/index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/SpringLocales/index.html">Locales</a>
+                        <a class="nav-link" href="/SpringLocales/listalocales.html">Locales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/SpringLocales/licencias.html">Licencias</a>
+                        <a class="nav-link" href="/SpringLocales/listalicencias.html">Licencias</a>
                     </li>
             </div>
 
@@ -132,7 +132,7 @@
 
                             <div class="form-group">
                                 <label class="control-label" for="fechaCreacion">Fecha Creacion:</label><br>
-                                <input class="form-control" id="fechaCreacion" name="fechaCreacion" type="string" value="${licencia.fechaCreacion}" required>
+                                <input class="form-control" id="fechaCreacion" name="fechaCreacion" type="date" value="${licencia.fechaCreacion}" required>
                             </div>
 
                             <div class="form-group">
