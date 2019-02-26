@@ -42,7 +42,7 @@ public class LicenciaController {
 
         try {
             List<Licencia> licencias = licenciaDAO.findAll();
-            model.put("licencias", licencias);
+            model.put("listalicencias", licencias);
             viewName = "licenciasLista";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
@@ -113,7 +113,7 @@ public class LicenciaController {
 
             licenciaDAO.saveOrUpdate(licencia);
 
-            viewName = "redirect:/licencias.html";
+            viewName = "redirect:/listalicencias.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             if (licencia != null) {
